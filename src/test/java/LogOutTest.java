@@ -1,5 +1,4 @@
 import driver.WebDriverCreator;
-import helpers.Helpers;
 import io.qameta.allure.Description;
 import models.CreateUserPojo;
 import org.junit.After;
@@ -23,7 +22,6 @@ public class LogOutTest {
     private MainPage mainPage;
     private CreateUserPojo userPojo;
     private ApiClient client;
-    private String token;
     PrivateAccountPage accountPage;
 
     @Before
@@ -34,7 +32,6 @@ public class LogOutTest {
         loginPage = new LoginPage(driver);
         mainPage = new MainPage(driver);
         userPojo = GeneratorUsers.randomUser();
-        token = client.registerUser(userPojo);
         accountPage = new PrivateAccountPage(driver);
     }
 

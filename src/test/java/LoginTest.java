@@ -6,7 +6,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+
 import pageObject.LoginPage;
 import pageObject.MainPage;
 import pageObject.RecoveryPasswordPage;
@@ -28,7 +28,6 @@ public class LoginTest {
     private MainPage mainPage;
     private CreateUserPojo userPojo;
     private ApiClient client;
-    private String token;
 
     @Before
     public void setup() {
@@ -39,7 +38,6 @@ public class LoginTest {
         loginPage = new LoginPage(driver);
         mainPage = new MainPage(driver);
         userPojo = GeneratorUsers.randomUser();
-        token = client.registerUser(userPojo);
     }
 
     @Test
