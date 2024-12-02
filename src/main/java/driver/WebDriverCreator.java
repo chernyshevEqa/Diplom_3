@@ -4,6 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class WebDriverCreator {
 
     public static WebDriver createWebDriver() {
@@ -23,6 +26,9 @@ public class WebDriverCreator {
 
     public static WebDriver createChromeDiver() {
         ChromeOptions options = new ChromeOptions();
+//        Map<String, Object> prefs = new HashMap<>();
+//        prefs.put("profile.managed_default_content_settings.images", 2); // Отключить загрузку изображений
+//        options.setExperimentalOption("prefs", prefs);
         return new ChromeDriver(options);
     }
 

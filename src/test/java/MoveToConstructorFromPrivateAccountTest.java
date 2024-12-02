@@ -21,7 +21,7 @@ public class MoveToConstructorFromPrivateAccountTest {
     private MainPage mainPage;
     private CreateUserPojo userPojo;
     private ApiClient client;
-    private String token;
+    public String token;
 
 
     @Before

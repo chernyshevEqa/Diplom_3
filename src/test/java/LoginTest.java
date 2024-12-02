@@ -15,6 +15,7 @@ import utils.GeneratorUsers;
 
 import static helpers.Helpers.getTextFromField;
 import static helpers.Helpers.waitLocatedElementOnPage;
+import static pageObject.LoginPage.loginTitle;
 import static pageObject.LoginPage.recoveryButton;
 import static pageObject.PrivateAccountPage.emailField;
 import static pageObject.RecoveryPasswordPage.waitLoginButton;
@@ -38,11 +39,12 @@ public class LoginTest {
         loginPage = new LoginPage(driver);
         mainPage = new MainPage(driver);
         userPojo = GeneratorUsers.randomUser();
+        client.registerUser(userPojo);
     }
 
     @Test
     @Description("вход по кнопке «Войти в аккаунт» на главной")
-    public void loginInAccountByLoginButtonOnMainPageTest() {
+    public void loginInAccountByLoginButtonOnMainPageTest() throws InterruptedException {
 
         driver.get("https://stellarburgers.nomoreparties.site");
         // открываем станицу логина через кнопку на главной страницу
