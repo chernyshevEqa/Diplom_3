@@ -33,6 +33,7 @@ public class LogOutTest {
         mainPage = new MainPage(driver);
         userPojo = GeneratorUsers.randomUser();
         accountPage = new PrivateAccountPage(driver);
+        client.registerUser(userPojo);
     }
 
     @Test
